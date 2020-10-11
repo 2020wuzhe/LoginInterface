@@ -11,3 +11,18 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
+
+<filter>
+		<filter-name>permissionCheckFilter</filter-name>
+		<filter-class>filter.PermissionFilter</filter-class>
+		<init-param>
+			<param-name>notCheckUri</param-name>
+	<param-value>/createVerifyImage.do,/login.do,/logout.do,/error.jsp</param-value>
+		</init-param>
+</filter>
+<filter-mapping>
+		<filter-name>permissionCheckFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+		<url-pattern>*.do</url-pattern>
+</filter-mapping>
+
